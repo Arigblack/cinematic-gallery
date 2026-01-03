@@ -58,3 +58,34 @@ body{
   text-decoration:none;
   box-shadow:0 0 20px cyan;
 }
+/* LOADING SCREEN */
+#loader{
+  position:fixed;
+  inset:0;
+  background:black;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.loader-text{
+  font-size:3rem;
+  color:cyan;
+  letter-spacing:4px;
+  text-shadow:0 0 30px cyan;
+  animation: glow 2s infinite alternate;
+}
+
+.loader-sub{
+  margin-top:15px;
+  color:#aaa;
+  letter-spacing:3px;
+  font-size:14px;
+}
+
+@keyframes glow{
+  from{opacity:0.6;}
+  to{opacity:1;}
+}
