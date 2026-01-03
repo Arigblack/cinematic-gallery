@@ -12,3 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+function openImg(img){
+  document.getElementById("modal").style.display="flex";
+  document.getElementById("modalImg").src = img.src;
+}
+
+document.getElementById("modal").onclick = function(){
+  this.style.display="none";
+};
