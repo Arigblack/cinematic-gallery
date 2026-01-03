@@ -31,3 +31,11 @@ setInterval(()=>{
   i = (i+1) % slides.length;
   document.getElementById("slideShow").src = slides[i];
 }, 3000);
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const loader = document.getElementById("loader");
+    if(loader){
+      loader.style.display = "none";
+    }
+  }, 2500); // 2.5 second
+});
