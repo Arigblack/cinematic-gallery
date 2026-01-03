@@ -89,3 +89,42 @@ body{
   from{opacity:0.6;}
   to{opacity:1;}
 }
+/* SCROLL ANIMATION */
+.visitor{
+  text-align:center;
+  margin:40px 0;
+  color:cyan;
+  font-size:18px;
+  text-shadow:0 0 20px cyan;
+}
+.gallery img{
+  opacity:0;
+  transform:translateY(60px);
+  transition:0.8s ease;
+}
+
+.gallery img.show{
+  opacity:1;
+  transform:translateY(0);
+}
+.logo{
+  font-size:3rem;
+  text-align:center;
+  margin:30px 0;
+  color:cyan;
+  position:relative;
+  overflow:hidden;
+}
+
+.logo::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:black;
+  transform:translateX(-100%);
+  animation:reveal 2.5s ease forwards;
+}
+
+@keyframes reveal{
+  to{ transform:translateX(100%); }
+}
