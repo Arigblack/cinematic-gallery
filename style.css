@@ -128,3 +128,24 @@ body{
 @keyframes reveal{
   to{ transform:translateX(100%); }
 }
+/* CINEMATIC FILM LOOK */
+body{
+  background:#000;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at center, transparent 55%, rgba(0,0,0,0.7)),
+    url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity:0.15;
+  z-index:9999;
+}
+
+/* Color grading */
+img{
+  filter: contrast(1.15) saturate(1.25) brightness(0.95);
+}
