@@ -46,3 +46,15 @@ body{
   max-height:90%;
   box-shadow:0 0 40px cyan;
 }
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  left:20px;
+  background:black;
+  color:cyan;
+  padding:12px 20px;
+  border:1px solid cyan;
+  border-radius:30px;
+  text-decoration:none;
+  box-shadow:0 0 20px cyan;
+}
