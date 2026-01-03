@@ -39,3 +39,20 @@ window.addEventListener("load", () => {
     }
   }, 2500); // 2.5 second
 });
+// SCROLL ANIMATION
+const imgs = document.querySelectorAll(".gallery img");
+
+window.addEventListener("scroll", () => {
+  imgs.forEach(img => {
+    const rect = img.getBoundingClientRect();
+    if(rect.top < window.innerHeight - 100){
+      img.classList.add("show");
+    }
+  });
+});
+// VISITOR COUNT
+fetch("https://api.countapi.xyz/hit/aditya-mishra-gallery/visits")
+.then(res => res.json())
+.then(data => {
+  document.getElementById("visits").innerText = data.value;
+});
