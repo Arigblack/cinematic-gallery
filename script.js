@@ -64,3 +64,47 @@ window.addEventListener("click", function playVoiceOnce(){
     window.removeEventListener("click", playVoiceOnce);
   }
 });
+// FIRE PARTICLE BACKGROUND
+const canvas = document.getElementById("fireCanvas");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+function createParticle(){
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: canvas.height + 20,
+    size: Math.random() * 3 + 1,
+    speedY: Math.random() * 1 + 0.5,
+    alpha: 1
+  });
+}
+
+function animateFire(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  if(particles.length < 200){
+    createParticle();
+  }
+
+  particles.forEach((p,i)=>{
+    ctx.beginPath();
+    ctx.fillStyle = `rgba(255,100,0,${p.alpha})`;
+    ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+    ctx.fill();
+
+    p.y -= p.speedY;
+    p.alpha -= 0.01;
+
+    if(p.alpha <= 0){
+      particles.splice(i,1);
+    }
+  });
+
+  requestAnimationFrame(animateFire);
+}
+
+animateFire();
