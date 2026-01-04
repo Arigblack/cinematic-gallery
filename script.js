@@ -56,3 +56,11 @@ fetch("https://api.countapi.xyz/hit/aditya-mishra-gallery/visits")
 .then(data => {
   document.getElementById("visits").innerText = data.value;
 });
+// AI VOICE INTRO - one time play (mobile safe)
+window.addEventListener("click", function playVoiceOnce(){
+  const voice = document.getElementById("voiceIntro");
+  if(voice){
+    voice.play();
+    window.removeEventListener("click", playVoiceOnce);
+  }
+});
